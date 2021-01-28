@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pagina de portafolio Alejandro Vera">
+    <meta name="robots" content="follow, index">
+    <title>Bienvenido al portafolio de Alejandro Vera</title>
+    <!--favicon  -->
+    <link rel="icon" type="image/png" href="../Fotos/WhatsApp Images/IMG-20190728-WA0009.jpg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <figure class="logo">
+                <img src="./images/logo.png" height= "50" alt="El logo de Alejandro Vera">
+            </figure>
+            <nav class="menu">
+                <ol>
+                    <li><a class="link" href="#portafolio">Portafolio</a></li>
+                    <li><a class="link" href="#experiencia">Experiencia</a></li>
+                    <li><a class="link" href="#contacto">Contactame</a></li>
+                    <li><a class="link" href="">Blog</a></li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="main__hero">
+                    Hola, soy Alejandro. Tecnico <strong>Aeronautico</strong> y <strong>desarrollador</strong> en Software
+                </h1>
+                <img class="main__img" src="../yo.jpg"  alt="imagen principal">
+            </div>
+        </section>
+
+        <!-- SECCION DE PORTAFOLIO -->
+
+        <section id="portafolio" class="portfolio">
+            <div class="container">
+                <h2>
+                    Portafolio
+                </h2>
+                <article class="project">
+                    <div class="project__details">
+                        <h3 class="project__title">Platzi Video</h3>
+                        <h6 class="project__course">React Native / React</h6>
+                        <p class="project__date"><small><strong>Fecha:</strong> 23/01/2021</small></p>
+                        <p class="project__url"><small><strong>Visitalo en:</strong> www.alejandrovera.com</small></p>
+                        <p class="project__description">Esto es un parrafo de ensayo, las verdaderas herramientas de portafolio se iran construyendo a medida que se avanza en el curso</p>
+                    </div>  
+                    <figure class="project__image--container">
+                        <img  class="project__image" width= "500" src="./images/platzi-video-react-native.png" alt="Video de proyecto en Platzi">
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCION DE LA EXPERIENCIA  -->
+        <div class="container">
+            <h2 class="experience__list--title">Mas sobre mi experiencia</h2>
+        </div>
+        <section id="experiencia" class="experience__list">
+            <div class="container">
+                <article class="experience">
+                    <figure class="experience__image--container">
+                        <img class="experience__image" src="../alejandro con fondo de avion.jpg" alt="Graduacion enero 2020">
+                    </figure>
+                    <div class="experience__detail">
+                        <h3 class="experience__title">Graduacion 2020</h3>
+                        <p class="experience__description">Cuando me gradue de tecnico aeronautico en la Universidad de las Fuerzas Armadas</p>
+                        <a class="experience__url" href="" target="blank">Ver más</a>
+                    </div>
+                </article>
+                <article class="experience">
+                    <figure class="experience__image--container">
+                        <img class="experience__image" src="../alejandro con fondo de avion.jpg" alt="Graduacion enero 2020">
+                    </figure>
+                    <div class="experience__detail">
+                        <h3 class="experience__title">Graduacion 2020</h3>
+                        <p class="experience__description">Cuando me gradue de tecnico aeronautico en la Universidad de las Fuerzas Armadas</p>
+                        <a class="experience__url" href="" target="blank">Ver más</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCION DE CONTACTO -->
+        <h2>¿Quieres contactarme?</h2>
+        <section id="contacto" class="contact">
+            <form action="" class="form__email">
+                <input type="text" placeholder="Dejame tu email" id="email">
+                <button>Enviar</button>
+            </form>
+            <div class="social">
+                <a href="https://github.com/alejandroverita" class="social__link github" ></a>
+                <a href="https://www.facebook.com/alejandrovh97" class="social__link facebook"></a>
+                <a href="https://www.instagram.com/alejandroverahdez/" class="social__link instagram"></a>
+                <a href="https://www.linkedin.com/in/alejandro-vera-278713192/" class="social__link linkedin"></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- SECCION DE PIE -->
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <p>Desarrollado en el curso de desarrollo web online <img src="" width=90px alt="logo"></p>
+            </div>
+            <div>
+                <p>Diseñado con 💙 por <a href="https://www.linkedin.com/in/alejandro-vera-278713192/ "> Alejandro Vera </a> </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
