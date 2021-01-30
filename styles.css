@@ -307,6 +307,16 @@ h2 {
     justify-content: space-between;
 }
 
+.footer__content {
+    display: flex;
+    align-items: center;
+    
+}
+
+.footer__image{
+    margin: 10px;
+}
+
 .footer img {
     vertical-align: center;
 }
