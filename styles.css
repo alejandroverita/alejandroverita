@@ -1,3 +1,6 @@
+
+
+
 :root{
     --gris-oscuro: #1d252c;
     --gris-claro: #626262;
@@ -16,6 +19,37 @@
 html {
     font-size: 62.5%;
 }
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('./images/fonts/icomoon.eot?f5a6l7');
+    src:  url('./images/fonts/icomoon.eot?f5a6l7#iefix') format('embedded-opentype'),
+      url('./images/fonts/icomoon.ttf?f5a6l7') format('truetype'),
+      url('./images/fonts/icomoon.woff?f5a6l7') format('woff'),
+      url('./images/fonts/icomoon.svg?f5a6l7#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e9bd";
+  }
 
 
 body {
@@ -39,21 +73,42 @@ ol,ul {
 }
 
 .hero {
-    height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width: 100%;
+    height: auto;
     background-color: var(--gris-claro);
-
 }
 
+.main__hero{
+    max-width: 1000px;
+    width: 48%;
+    margin: 10px;
+    padding: 10px;
+    height: auto;
+    display: inline-block; 
+    align-items: center;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    text-align: center;
+    height: auto;
+    
+}
+
+
+.container__hero{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center; 
+}
 
 
 .main__img{
     object-fit: cover;
     margin: 20px;
     padding: 20px;
-    display: flex;
+    display: inline-block;
+    flex-wrap: wrap;
     width: 500px;
     height: 300px;  
     background-repeat: no-repeat;
@@ -83,16 +138,37 @@ h2 {
     flex-wrap: wrap; /* los elementos fluyen a otra linea dependiendo de la resolucion de la pantalla */
     z-index: 99;
     align-items: center;
+    flex-wrap: wrap;
 
-    /* fijar cabecera */
+    /* fijar cabecera 
     width: 100%;
     left:0;
     top: 0;
-    position: fixed; /* posicion fija de la cabecera */
+    position: fixed;  posicion fija de la cabecera */
 }
 
 .menu { 
     height: inherit; /* Hereda de .header */
+}
+
+.container__header{
+
+    /* max-width: 1000px; */
+    align-content: center;
+    width: 100%;
+    margin: auto 0;
+    flex:1;
+    padding: 20px;
+    display: inherit;
+    justify-content: space-between;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+}
+
+.container__header .logo {
+    -webkit-text-stroke: 1px #026fff;
+    font-size: 3rem;
 }
 
 .header ol { 
@@ -112,24 +188,35 @@ h2 {
     display: flex;
     align-items: center;
     padding: 0 10px; /* padding solo a los lados para conseguir separacion */
-
+    font-size: 2rem;
 }
 
 .portfolio {
     background: var(--background-claro);
+    width: 100%;
     
 }
 
+.container__project{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
+
+}
+
 .project {
+    max-width: 1000px;
+    width: 100%;
     border: 1px solid var(--gris-claro);
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
-    height: 450px;
+    height: auto;
     background-color: var(--just-white);
     display: flex; 
     align-items: center;
     justify-content: space-between;
+    flex-wrap:wrap;
 }
 
 .project__title {
@@ -160,11 +247,15 @@ h2 {
 }
 
 .project__details {
-    width: 500px;
+    width: 50%;
 }
 
 .project__image--container {
-    width: 500px;
+    width: 50%;
+}
+
+.project__image--container-item{
+    max-width: 100%; /* con respecto al elemento padre */
 }
 
 .experience__list--title{
@@ -172,22 +263,41 @@ h2 {
 }
 
 .experience__list{
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; */
+
+    background: var(--background-claro);
+    width: 100%;
+}
+
+.container__experience{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
 .experience{
+    max-width: 1000px;
+    border: 1px solid var(--gris-claro);
     margin: 10px;
-    width: 480px;
+    width: 100%;
+    padding: 10px;
+    height: 450px;
     border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
     background: #f4fbff;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap:wrap; 
 
 }
 
 .experience img {
+    display: inherit;
+    justify-content: center;
     width: 480px;
     height: 200px;
     object-fit: cover;
@@ -224,6 +334,7 @@ h2 {
     display: flex;
     align-items: center; 
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .social__link{
@@ -286,31 +397,46 @@ h2 {
 }
 
 .container {
-    
+    max-width: 1000px;
     width: 100%;
-    margin: 0 auto;
+    margin: auto 0;
+    flex:1;
+    padding: 20px;
     display: inherit;
-    justify-content: inherit;
+    /* justify-content: inherit; */
     align-items: inherit;
     height: inherit;
     flex-wrap: inherit;
 }
 
 .footer {
+    width: 100%;
     color: var(--just-white);
-    height: 50px;
+    height: auto;
     font-size: 1.4rem;
     padding: 15px;
     background-color: var(--background-gris);
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; */
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .footer__content {
     display: flex;
     align-items: center;
     
+}
+
+.footer__content--grats{
+     display: flex;
+     align-items: center;   
 }
 
 .footer__image{
@@ -323,4 +449,273 @@ h2 {
 
 .footer a {
     color: var(--just-white);
+}
+
+
+.burger-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0, 0.8);
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .container__hero {
+        padding: 0 1em;
+        width: 100%;
+        justify-content: flex-start;
+       
+    }
+
+    .hero {
+        height:auto;
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap
+    }
+
+    .main__hero {
+        max-width: 420px;
+        font-size: 4rem;
+
+    }
+
+    .main__img{
+        position: absolute;
+        display: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+        flex-wrap: inherit;
+        z-index:1;
+        right:0;
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 2em;
+        z-index:2;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    
+    .burger-button{
+        display: block;
+    }
+    
+    .header {
+
+        display: block;
+        height: auto;
+    }
+
+    .header ol {
+        display: block;
+
+    }
+
+    .header ol li {
+        height: 50px;
+    }
+
+    .header a {
+        justify-content: center;
+        height: 4rem;
+        font-size:3.2rem;
+        /* text-decoration: underline; */
+        margin-bottom: .5em;
+    }
+
+    .header .logo {
+        text-align:center;
+        text-decoration: none;
+    }
+
+
+    .menu{
+        position: fixed;
+        background-color: rgba(5, 111, 255, .9);
+        z-index: 3;
+        top: 0;
+        left:-100vw; /* Para que el menu se oculte a la izquierda y se cree el efecto al hacer click*/
+        width: 100vw;
+        bottom: 0;/* height: 100vw; */ /*A partir de aqui para centrar*/
+        display: flex;
+        align-items: center;
+        justify-content: center; /* centrar hasta aqui */
+        transition: .3s; /* Para crear efecto de transición */
+    }
+
+    .menu.is-active { /* clase para hacer que se mustre menu */
+        left: 0;
+    }
+
+    .hero {
+        width: 100%;
+    }
+
+    
+    .main__hero{
+        /* display: block; */
+        width: 48%;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .main__img{
+        width: 48%;
+        text-align: center;
+    } 
+
+    .project {
+        display: block;
+    }
+
+    .project__image--container{
+        width: auto;
+        text-align: center;
+    }
+
+    .project__image--container-item{
+        max-width: 50%;
+    }
+
+    .project__details{
+        width: auto;
+        font-size: 16px; /* se lo puede quitar y es el mismo or defecto del navegador */
+    }
+
+    .project__course, .project__date, .project__url{
+        margin: 0.4em 0;
+    }
+
+
+    .project__title {
+        font-size: 1.5em;
+        margin-bottom: .3em;
+    }
+
+    .project__url {
+        font-size: 1em;
+    }
+
+    .project__course {
+        font-size: 0.7em;
+    }
+
+    .project__date{
+        font-size: 1em;
+    }
+
+    .project__description{
+        font-size: 0.8em;
+    }
+
+    .experience {
+        width: auto;
+        flex-shrink: initial;
+    }
+
+    .experience img {
+        width: 100%
+    }
+
+    .experience__detail{
+        margin: -2em .5em .5em;
+        padding: .2em;
+    }
+
+    .contact{
+        height: auto;
+        padding: 1em 0;
+        text-align:center;
+        display: block;
+    }
+
+    .form__email button {
+        margin: 1em auto;
+    }
+
+    .form__email h3 {
+        margin-top: 0;
+    }
+
+    .footer__container {
+        height: auto;
+        display: block;
+        text-align:center;
+        border: 1px solid transparent;
+    }
+
+    .footer__content{
+        display:block;
+        text-align: center;
+    }
+
+
+    .footer img {
+        display:block;
+        margin: 0.7em auto;
+    }
+
+
+    .footer__content--grats{
+        display: block;
+        
+   }
+}
+
+@media screen and (max-width: 480px) {
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .project__details{
+        font-size: 12px;
+    }
+
+    .main__hero{
+        /* display: block; */
+        width: 48%;
+        text-align: center;
+        font-size:2rem;
+    }
+
+    .main__img{
+        width: 40%;
+        text-align: center;
+    } 
+
+
+}
+
+@media screen and (max-width: 400px) {
+    .main__img{
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 1.2em;
+        text-shadow: 1px 2px 2px #000;
+    }
+
+    .hero {
+        padding: 2em 1em;
+    }
 }

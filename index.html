@@ -13,11 +13,23 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
+   
+
     <link rel="stylesheet" href="./styles.css">
+
+    <!-- <link rel="stylesheet" href="media1.css" media="screen and (max-width:320px)">
+
+    <link rel="stylesheet" href="media2.css" media="screen and (max-width:480px)">
+
+    <link rel="stylesheet" href="media3.css" media="screen and (max-width:768px)">
+
+    <link rel="stylesheet" href="media4.css" media="screen and (max-width:1024px)"> -->
+    
 </head>
 <body>
+    <i class="icon-menu burger-button" id="burger-menu"></i>
     <header class="header">
-        <div class="container">
+        <div class="container__header">
             <a class="logo">
                  Alejandro Vera
             </a>
@@ -33,7 +45,7 @@
     </header>
     <main>
         <section class="hero">
-            <div class="container">
+            <div class="container__hero">
                 <h1 class="main__hero">
                     Hola, soy Alejandro. Tecnico <strong>Aeronautico</strong> y <strong>desarrollador</strong> en Software
                 </h1>
@@ -42,12 +54,11 @@
         </section>
 
         <!-- SECCION DE PORTAFOLIO -->
-
+        <div class="container">
+            <h2>Portafolio</h2>
+        </div>
         <section id="portafolio" class="portfolio">
-            <div class="container">
-                <h2>
-                    Portafolio
-                </h2>
+            <div class="container__project">
                 <article class="project">
                     <div class="project__details">
                         <h3 class="project__title">Platzi Video</h3>
@@ -57,18 +68,33 @@
                         <p class="project__description">Esto es un parrafo de ensayo, las verdaderas herramientas de portafolio se iran construyendo a medida que se avanza en el curso</p>
                     </div>  
                     <figure class="project__image--container">
-                        <img  class="project__image" width= "500" src="./images/platzi-video-react-native.png" alt="Video de proyecto en Platzi">
+                        <img  class="project__image--container-item" src="./images/platzi-video-react-native.png" alt="Video de proyecto en Platzi">
                     </figure>
                 </article>
+
+                <article class="project">
+                    <div class="project__details">
+                        <h3 class="project__title">Platzi Video</h3>
+                        <h6 class="project__course">React Native / React</h6>
+                        <p class="project__date"><small><strong>Fecha:</strong> 23/01/2021</small></p>
+                        <p class="project__url"><small><strong>Visitalo en:</strong> www.alejandrovera.com</small></p>
+                        <p class="project__description">Esto es un parrafo de ensayo, las verdaderas herramientas de portafolio se iran construyendo a medida que se avanza en el curso</p>
+                    </div>  
+                    <figure class="project__image--container">
+                        <img  class="project__image--container-item" src="./images/platzi-video-react-native.png" alt="Video de proyecto en Platzi">
+                    </figure>
+                </article>
+
             </div>
         </section>
+
 
         <!-- SECCION DE LA EXPERIENCIA  -->
         <div class="container">
             <h2 class="experience__list--title">Mas sobre mi experiencia</h2>
         </div>
         <section id="experiencia" class="experience__list">
-            <div class="container">
+            <div class="container__experience">
                 <article class="experience">
                     <figure class="experience__image--container">
                         <img class="experience__image" src="./images/alejandro_avion.jpg" alt="Graduacion enero 2020">
@@ -111,14 +137,49 @@
     <!-- SECCION DE PIE -->
 
     <footer class="footer">
-        <div class="container">
+        <div class="footer__container">
             <div>
                 <p class="footer__content">Desarrollado en el curso de desarrollo web online <img class="footer__image" src="./images/platzi.png" width=90px alt="logo"></p>
             </div>
-            <div>
-                <p>Diseñado con 💙 por <a href="https://www.linkedin.com/in/alejandro-vera-278713192/ "> Alejandro Vera </a> </p>
+            <div class="footer__content--grats">
+                <p class="footer__content">Diseñado con 💙 por <a href="https://www.linkedin.com/in/alejandro-vera-278713192/ "> Alejandro Vera </a> </p>
             </div>
         </div>
-    </footer>
+    </footer> -->
+    <script>
+
+        const ipad = window.matchMedia('screen and (max-width:767px)');
+
+        const menu = document.querySelector('.menu');
+        console.log(menu);
+
+        const burgerButton= document.querySelector('#burger-menu');
+        /* console.log(burgerButton); */
+
+
+
+        ipad.addListener(validation)
+
+        function validation (event) {
+           if (event.matches) {
+               burgerButton.addEventListener('click', hideShow)
+           }
+           else {
+                burgerButton.removeEventListener('click', hideShow)
+           }
+        }
+
+        function hideShow() {
+
+            menu.classList.toggle('is-active');
+           /*  if (menu.classList.contains('is-active')){
+                menu.classList.remove('is-active');
+            }
+            else {
+
+                menu.classList.add('is-active');    
+            }*/
+        } 
+    </script>
 </body>
 </html>
