@@ -29,7 +29,7 @@ html {
       url('./images/fonts/icomoon.svg?f5a6l7#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    /* font-display: block; */
   }
   
   [class^="icon-"], [class*=" icon-"] {
@@ -54,28 +54,36 @@ html {
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
 }
 
 h1 {
     font-size: 40px;
     line-height: 1.5;
     letter-spacing: -.2px;
-    /* color: var(--just-white); */
-    margin: 20px;
+    color: var(--just-white); 
+    margin: 0px;
 }
 
+
 ol,ul {
+    
     list-style: none;
 }
 
 .hero {
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
+    height: 300px;
     background-color: var(--gris-claro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .main__hero{
@@ -95,11 +103,17 @@ ol,ul {
 
 
 .container__hero{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center; 
+    
+    /* max-width: 1000px; */
+    /* width: 100%; */
+    margin: auto 0;
+    flex:1;
+    /* padding: 20px; */
+    display: inherit;
+    justify-content: inherit; 
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
 }
 
 
@@ -127,6 +141,7 @@ h2 {
     font-weight: bold;
     font-size: 2.4rem;
     margin: 20px;
+    margin-bottom: 40px;
 }
 
 .header {
@@ -136,9 +151,8 @@ h2 {
     justify-content: space-around; /* espacion entre el hero y el menu */
     height: 70px;/* alto que sera heredado */
     flex-wrap: wrap; /* los elementos fluyen a otra linea dependiendo de la resolucion de la pantalla */
-    z-index: 99;
+    /* z-index: 99; */
     align-items: center;
-    flex-wrap: wrap;
 
     /* fijar cabecera 
     width: 100%;
@@ -181,37 +195,75 @@ h2 {
     height: inherit; /* .header ol li herda de .header ol */
 }
 
+.header ol li .border {
+    height: initial;
+    border: 1px solid var(--just-white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 14px 0;
+
+}
+
 .header a {
     color: var(--just-white);
     text-decoration: none;
     height: inherit;
     display: flex;
     align-items: center;
-    padding: 0 10px; /* padding solo a los lados para conseguir separacion */
-    font-size: 2rem;
+    padding: 0 10px;  /* padding solo a los lados para conseguir separacion 
+    font-size: 2rem; */
+} 
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.box {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid red;
+    flex-shrink: 0;
+}
+
+
+/* -------------------------SECCION DE PORTAFOLIO--------------------- */
+
 
 .portfolio {
     background: var(--background-claro);
-    width: 100%;
+    padding: 20px;
+   /*  width: 100%; */
+    
     
 }
 
 .container__project{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly
+    justify-content: space-evenly; */
+    /* max-width: 1000px; */
+    /* width: 100%; */
+    margin: auto 0;
+    flex:1;
+    /* padding: 20px; */
+    display: inherit;
+    justify-content: inherit; 
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
 
 }
 
 .project {
-    max-width: 1000px;
-    width: 100%;
+    /* max-width: 1000px;
+    width: 100%; */
     border: 1px solid var(--gris-claro);
     border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-    height: auto;
+    margin-bottom: 15px;
+    padding: 20px;
+    /* height: auto; */
     background-color: var(--just-white);
     display: flex; 
     align-items: center;
@@ -229,7 +281,7 @@ h2 {
 .project__date,
 .project__url {
     margin: 10px 0;
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
 .project__date small,
@@ -238,7 +290,7 @@ h2 {
 }
 
 .project__description {
-    margin: 10px;
+    /* margin: 10px; */
     font-size: 2.0rem; 
 }
 
@@ -258,17 +310,27 @@ h2 {
     max-width: 100%; /* con respecto al elemento padre */
 }
 
+
+/* --------------------SECCION DE EXPERIENCIA-------------------- */
+
+
 .experience__list--title{
     margin-left: 20px;
 }
 
-.experience__list{
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly; */
+/* agrega el borde a la izquierda a cada seccion */
 
-    background: var(--background-claro);
-    width: 100%;
+.portfolio, .experience__list {
+    border-left: 10px solid #026fff;
+}
+
+.experience__list{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly;  */
+
+    /* background: var(--background-claro);
+    width: 100%; */
 }
 
 .container__experience{
@@ -278,27 +340,27 @@ h2 {
 }
 
 .experience{
-    max-width: 1000px;
+    /* max-width: 1000px; */
     border: 1px solid var(--gris-claro);
-    margin: 10px;
-    width: 100%;
-    padding: 10px;
-    height: 450px;
+    margin: 1%;
+    width: 48%;
+    /* padding: 10px;
+    height: 450px; */
     border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
     background: #f4fbff;
-    display: flex; 
+   /*  display: flex; 
     align-items: center;
     justify-content: space-between;
-    flex-wrap:wrap; 
+    flex-wrap:wrap;  */
 
 }
 
 .experience img {
-    display: inherit;
-    justify-content: center;
-    width: 480px;
+    /* display: inherit;
+    justify-content: center; */
+    width: 100%;
     height: 200px;
     object-fit: cover;
 }
@@ -313,9 +375,9 @@ h2 {
 }
 
 .experience__description {
-    margin: 20px;
+    /* margin: 20px; */
     text-align: left;
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
 .experience__url {
@@ -327,10 +389,15 @@ h2 {
     
 }
 
+
+/* -----------------------------SECCION DE CONTACTO------------- */
+
+
 .contact {
     background-color: var(--celeste);
     color: var(--just-white);
     height: 100px;
+    padding: 10px 20px;
     display: flex;
     align-items: center; 
     justify-content: space-between;
@@ -363,9 +430,9 @@ h2 {
     background-image: url("./images/linkedin-transparent.png");
 }
 
-.form__email {
+/* .form__email {
     margin-left: 15px;
-}
+} */
 
 .form__email input{
     border-color: var(--just-white);
@@ -373,10 +440,10 @@ h2 {
     border-radius: 5px;
     padding: 10px 20px 5px 35px;
     background-image: url("./images/envelope.svg");
-    background-size: 20px;
+    background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position-y: center;
-    background-position-x: 10px ;
+    background-position-x: 5px ;
 }
 
 .form__email button {
@@ -397,35 +464,48 @@ h2 {
 }
 
 .container {
-    max-width: 1000px;
-    width: 100%;
+    /* max-width: 1000px; */
+    /* width: 100%; */
     margin: auto 0;
     flex:1;
-    padding: 20px;
+    /* padding: 20px; */
     display: inherit;
-    /* justify-content: inherit; */
+    justify-content: inherit; 
     align-items: inherit;
     height: inherit;
     flex-wrap: inherit;
 }
 
+
+/* ----------------------------------SECCION DE PIE------------- */
+
 .footer {
-    width: 100%;
+    /* width: 100%; */
     color: var(--just-white);
-    height: auto;
-    font-size: 1.4rem;
-    padding: 15px;
+    /* height: auto; */
+    /* font-size: 1.4rem; */
+    /* padding: 15px; */
     background-color: var(--background-gris);
-    /* display: flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; */
+    flex-wrap: wrap; 
 }
 
 .footer__container {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around; */
+    /* max-width: 1000px; */
+    /* width: 100%; */
+    margin: auto 0;
+    flex:1;
+    padding: 10px 20px; 
+    display: inherit;
+    justify-content: inherit; 
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
 }
 
 .footer__content {
@@ -452,6 +532,8 @@ h2 {
 }
 
 
+/* -----------------------SECCION DE BURGER BUTTON------------------ */
+
 .burger-button {
     width: 40px;
     height: 40px;
@@ -467,7 +549,24 @@ h2 {
     color: white;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
+    
+    .experience__list--title {
+        margin-left: 0;
+    }
+
+    .portfolio{
+        padding: 0;
+    }
+
+    .experience__description {
+        margin: 10px 0;
+    }
+    
+    .experience__url{
+        margin-top: 15px;
+    }
+
     .container__hero {
         padding: 0 1em;
         width: 100%;
@@ -475,32 +574,52 @@ h2 {
        
     }
 
+    /* AGREGA UN CIRCULO AL lado de cada h2  */
+    h2:before {
+        content: '';
+        position: absolute;
+        left: -25px;
+        top: 20%;
+        font-size: 10px;
+        color: #026fff;
+        width: 20px;
+        height: 20px;
+        background-color: #026fff;
+        border-radius: 50%
+    }
+
     .hero {
-        height:auto;
+        /* height:auto; */
         position: relative;
         overflow: hidden;
         padding: 2em;
-        display: flex;
+        /* display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: nowrap
+        flex-wrap: nowrap */
     }
 
-    .main__hero {
+    /* .main__hero {
         max-width: 420px;
         font-size: 4rem;
 
-    }
+    } */
+
 
     .main__img{
         position: absolute;
-        display: inherit;
+        /* display: inherit;
         justify-content: inherit;
         align-items: inherit;
-        flex-wrap: inherit;
+        flex-wrap: inherit; */
         z-index:1;
         right:0;
-        width: 50%;
+        left:0;
+        top: 0;
+        bottom: 0;
+        /* width: 100%; */
+        display: inherit;
+        margin-inline-start: auto;
     }
 
     h1 {
@@ -629,6 +748,10 @@ h2 {
         flex-shrink: initial;
     }
 
+    .experience__list {
+        flex-wrap: nowrap;
+    }
+
     .experience img {
         width: 100%
     }
@@ -683,11 +806,26 @@ h2 {
     h1 {
         font-size: 1.5em;
     }
+
+    h2:before {
+        width: 15px;
+        height: 15px;
+        left: -24px;
+    }
+
+    /* le quita el borde que tienen nuestras cad y agrega sombra */
+
+    .project, .experience{
+        box-shadow: 1px 1px 10px 1px lightgray;
+    }
     
     .project__details{
         font-size: 12px;
     }
 
+    .hero {
+        height: auto;
+    }
     .main__hero{
         /* display: block; */
         width: 48%;
@@ -698,6 +836,7 @@ h2 {
     .main__img{
         width: 40%;
         text-align: center;
+        margin-top: -40px;
     } 
 
 
@@ -706,6 +845,11 @@ h2 {
 @media screen and (max-width: 400px) {
     .main__img{
         object-fit: contain;
+        margin-top: -40px;
+    }
+
+    .container {
+        flex-wrap: wrap;
     }
 }
 
