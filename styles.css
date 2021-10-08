@@ -5,7 +5,7 @@
   --just-white: #ffffff;
   --background-claro: #fafafa;
   --celeste: #026fff;
-  --main-color: rgba(10, 25, 47, 0.85);
+  --main-color: rgb(2, 0, 36);
 }
 
 * {
@@ -35,7 +35,6 @@ html {
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
-  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -80,57 +79,6 @@ ul {
   list-style: none;
 }
 
-.hero {
-  width: 100%;
-  height: 50vh;
-  background-color: var(--main-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.main__hero {
-  max-width: 1000px;
-  width: 48%;
-  margin: 10px;
-  padding: 10px;
-  height: auto;
-  display: inline-block;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: center;
-  height: auto;
-}
-
-.container__hero {
-  /* max-width: 1000px; */
-  /* width: 100%; */
-  margin: auto 0;
-  flex: 1;
-  /* padding: 20px; */
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  height: inherit;
-  flex-wrap: inherit;
-}
-
-.main__img {
-  object-fit: none;
-  margin: 2rem;
-  padding: 2rem;
-  display: inline-block;
-  flex-wrap: wrap;
-  width: 30rem;
-  height: 30rem;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-size: 500px 300px;
-  background-position-x: right;
-}
-
 h1 strong {
   color: var(--celeste);
 }
@@ -145,20 +93,18 @@ h2 {
 }
 
 .header {
-  background-color: var(--background-gris);
-  color: var(--just-white);
   display: flex;
-  justify-content: space-around; /* espacion entre el hero y el menu */
+  background-color: var(--background-gris);
+
+  max-width: 1440px;
   height: 70px; /* alto que sera heredado */
-  flex-wrap: wrap; /* los elementos fluyen a otra linea dependiendo de la resolucion de la pantalla */
-  /* z-index: 99; */
+  z-index: 99;
   align-items: center;
 
-  /* fijar cabecera 
-    width: 100%;
-    left:0;
-    top: 0;
-    position: fixed;  posicion fija de la cabecera */
+  /* fijar cabecera
+  width: 100%;
+  top: 0;
+  position: fixed; /*posicion fija de la cabecera*/
 }
 
 .menu {
@@ -166,17 +112,13 @@ h2 {
 }
 
 .container__header {
-  /* max-width: 1000px; */
-  align-content: center;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
   margin: auto 0;
   flex: 1;
   padding: 20px;
-  display: inherit;
-  justify-content: space-between;
-  align-items: inherit;
-  height: inherit;
-  flex-wrap: inherit;
 }
 
 .container__header .logo {
@@ -202,43 +144,78 @@ h2 {
 }
 
 .header a {
+  display: flex;
+  align-items: center;
   color: var(--just-white);
   text-decoration: none;
   font-size: 1.5rem;
   height: inherit;
-  display: flex;
-  align-items: center;
   padding: 0 10px;
 }
 
-.flexbox {
+.header a:hover {
+  text-decoration: underline;
+}
+
+/* FIN HEADER */
+
+.hero {
+  width: 100%;
+  height: 50vh;
+  background: var(--main-color);
+  background: linear-gradient(
+    34deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(23, 79, 154, 0.9229387555803571) 76%,
+    rgba(0, 212, 255, 1) 100%
+  );
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.box {
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-  border: 1px solid red;
-  flex-shrink: 0;
+.container__hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* max-width: 1000px; */
+}
+
+.main__hero {
+  max-width: 1000px;
+  width: 48%;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.main__img {
+  display: inline-block;
+  margin: 2rem;
+  padding: 2rem;
+  width: 30rem;
+  height: 30rem;
+
+  border-radius: 50%;
+  object-fit: none;
 }
 
 /* -------------------------SECCION DE PORTAFOLIO--------------------- */
 
 .portfolio {
-  display: flex;
+  display: grid;
   background: var(--background-claro);
   padding: 20px;
   width: 100%;
 }
 
 .container__project {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: auto 0;
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  place-content: center;
+  gap: 40px;
 }
 
 .project {
@@ -375,20 +352,27 @@ h2 {
 /* -----------------------------SECCION DE CONTACTO------------- */
 
 .contact {
-  background-color: var(--main-color);
-  color: var(--just-white);
-  height: 100px;
-  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  background: var(--main-color);
+  background: linear-gradient(
+    34deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(23, 79, 154, 0.9229387555803571) 76%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: var(--just-white);
+  height: 100px;
+  padding: 10px 20px;
 }
 
 .social__link {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   margin: 0 10px;
   background-size: 50px 50px;
 }
@@ -409,15 +393,16 @@ h2 {
   background-image: url("./images/linkedin-transparent.png");
 }
 
-/* .form__email {
-    margin-left: 15px;
-} */
+.form__email {
+  display: flex;
+  align-items: center;
+}
 
 .form__email input {
   border-color: var(--just-white);
   border-style: solid;
   border-radius: 5px;
-  padding: 10px 20px 5px 35px;
+  padding: 10px 20px 10px 35px;
   background-image: url("./images/envelope.svg");
   background-size: 15px 15px;
   background-repeat: no-repeat;
@@ -426,32 +411,18 @@ h2 {
 }
 
 .form__email button {
-  display: block;
   border-color: var(--just-white);
   background: transparent;
   color: var(--just-white);
   padding: 10px 0;
   border-radius: 5px;
   width: 100px;
-  margin-top: 10px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
 .form__email h3 {
   font-family: "Fjalla One", sans-serif;
-}
-
-.container {
-  /* max-width: 1000px; */
-  /* width: 100%; */
-  margin: auto 0;
-  flex: 1;
-  /* padding: 20px; */
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  height: inherit;
-  flex-wrap: inherit;
 }
 
 /* ----------------------------------SECCION DE PIE------------- */
@@ -551,7 +522,7 @@ h2 {
     color: #026fff;
     width: 20px;
     height: 20px;
-    background-color: #026fff;
+    /* background-color: #026fff; */
     border-radius: 50%;
   }
 
@@ -630,8 +601,14 @@ h2 {
     text-align: center;
   }
 
+  .container__project {
+    grid-template-columns: repeat(auto-fill, 260px);
+    gap: 10px;
+  }
+
   .project {
     display: block;
+    width: 260px;
   }
 
   .project__image--container {
@@ -695,13 +672,11 @@ h2 {
 
   .contact {
     height: auto;
-    padding: 1em 0;
-    text-align: center;
-    display: block;
+    flex-direction: column;
   }
 
-  .form__email button {
-    margin: 1em auto;
+  .form__email {
+    margin-bottom: 2rem;
   }
 
   .form__email h3 {
